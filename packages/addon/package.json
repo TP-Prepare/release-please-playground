@@ -1,0 +1,34 @@
+{
+  "name": "@wely674378-team/addon",
+  "version": "0.1.0",
+  "description": "Тестовый пакет для обкатки release-please: зависит от core через peerDependency",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TP-Prepare/release-please-playground.git",
+    "directory": "packages/addon"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "@wely674378-team/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@wely674378-team/core": "workspace:*"
+  }
+}
