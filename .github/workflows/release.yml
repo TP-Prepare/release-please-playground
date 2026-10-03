@@ -47,6 +47,8 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: bun install --frozen-lockfile
       - run: bun run build
+      # trusted publishing требует npm 11.5.1+
+      - run: npm --version
       # bun publish не умеет trusted publishing, поэтому публикует npm
       - run: npm publish
         working-directory: ${{ matrix.path }}
